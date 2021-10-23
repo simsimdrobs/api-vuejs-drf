@@ -7,7 +7,7 @@ class Task(models.Model):
         ('not done', 'NOT DONE')
     ]
     content = models.CharField(max_length=200)
-    completion = models.BooleanField(choices=TASK_DONE)
+    completion = models.CharField(max_length=200, choices=TASK_DONE)
 
     def __str__(self):
         return self.content
