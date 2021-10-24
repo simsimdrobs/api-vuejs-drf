@@ -46,11 +46,13 @@ export default {
             console.log(this.create)
         },
         deleteTask(id) {
-            axios.delete(`http://127.0.0.1:8000/api/tasks/${id}/`)
-            .then(response => {
-                window.location.reload()
-                console.log(response)
-            })
+            if (confirm("Are you sure you want to delete the task?")) {
+                axios.delete(`http://127.0.0.1:8000/api/tasks/${id}/`)
+                .then(response => {
+                    window.location.reload()
+                    console.log(response)
+                })
+            }
         }
         
     },
